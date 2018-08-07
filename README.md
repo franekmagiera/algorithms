@@ -18,7 +18,7 @@ This is a library containing various algorithms written in C. Functions work on 
  - binary search
  - sum two binary numbers
  - inversion counting
- - finding maximal subarray (3 different algorithms - a brute force one of
+ - finding maximal subarray (three different algorithms - a brute force one of
 complexity O(n), a "divide and conquer" recursive one of complexity O(nlogn) and a linear one)
 
 ## common
