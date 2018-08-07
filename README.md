@@ -13,11 +13,13 @@ This is a library containing various algorithms written in C. Functions work on 
  - merge sort
  - improved merge sort (newMergeSort()) that uses insertion sort for arrays of size smaller than 18. I came up with number 18 after playing around with insertionVsMerge program for a while. newMergeSort() is faster then old mergeSort(). For the array of size one million the difference is a couple of hundeths of a second.
  
- ## other
-  - linear search
-  - binary search
-  - sum two binary numbers
-  - inversion counting
-  
+## other
+ - linear search
+ - binary search
+ - sum two binary numbers
+ - inversion counting
+ - finding maximal subarray (3 different algorithms - a brute force one of
+complexity O(n), a "divide and conquer" recursive one of complexity O(nlogn) and a linear one)
+
 ## common
 Contains functions such as swap and merge.
