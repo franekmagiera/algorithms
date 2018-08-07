@@ -1,6 +1,6 @@
 # algorithms
 
-This is a library containing various algorithms written in C. Functions work on arrays and are generic(independent of the array's data type) and they require a comparison function for a given data type. In order for a comparison function to be compatible with algorithms from this repository it should take two pointers to const voids and return an int, more precisely:
+This is a library containing various algorithms written in C. Functions work on arrays. Some of them are generic(independent of the array's data type) and they require a comparison function for a given data type. In order for a comparison function to be compatible with algorithms from this repository it should take two pointers to const voids and return an int, more precisely:
  - 1, if the first argument is larger than the second one
  - 0, if both arguments are the same
  - -1, if the first argument is smaller than the second one
