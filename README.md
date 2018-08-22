@@ -19,7 +19,7 @@ This is a library containing various algorithms written in C. Functions work on 
  - sum two binary numbers
  - inversion counting
  - finding maximal subarray (three different algorithms - a brute force one of
-complexity O(n), a "divide and conquer" recursive one of complexity O(nlogn) and a linear one)
+complexity O(n^2), a "divide and conquer" recursive one of complexity O(nlogn) and a linear one)
 
 ## common
 Contains functions such as swap and merge.
