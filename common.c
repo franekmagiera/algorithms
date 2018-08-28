@@ -11,8 +11,10 @@ void swap(void * a, void * b, int elementSize)
 	}
 }
 
-int merge(void * array, int left, int middle, int right, int elementSize, int (*compare)(const void *, const void *), int var)
+int merge(void * array, int left, int middle, int right, int elementSize, int (*compare)(const void *, const void *),
+          bool reverse)
 {
+    int coefficient = (reverse) ? (-1) : (1);
 	int n1 = middle - left + 1;
 	void * A = malloc(n1*elementSize);
 	if (A == NULL) {
@@ -26,7 +28,7 @@ int merge(void * array, int left, int middle, int right, int elementSize, int (*
 	memcpy(B,array+(middle+1)*elementSize,n2*elementSize);
 	int i = 0, j = 0, inversions = 0, k = left;
 	while (i < n1 && j < n2){
-		if (compare(A+i*elementSize, B+j*elementSize) * var <= 0) {
+		if (compare(A+i*elementSize, B+j*elementSize) * coefficient <= 0) {
 			memcpy(array+k*elementSize, A+i*elementSize, elementSize);
 			i++;
 			k++;

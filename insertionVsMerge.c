@@ -2,6 +2,7 @@
 #include "compare.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <string.h>
 #include <time.h>
 
@@ -25,12 +26,12 @@ int main()
     int * copy = malloc(sizeof(int)*i);
     memcpy(copy, array, sizeof(int)*i);
     clock_t beginInsertionSort = clock();
-    insertionSort(copy, i, sizeof(int), compareInts, 1);
+    insertionSort(copy, i, sizeof(int), compareInts, false);
     clock_t endInsertionSort = clock();
     insertionSortTime = (double) (endInsertionSort - beginInsertionSort) / CLOCKS_PER_SEC;
     memcpy(copy, array, sizeof(int)*i);
     clock_t beginMergeSort = clock();
-    mergeSort(copy, 0, i-1, sizeof(int), compareInts, 1);
+    mergeSort(copy, 0, i-1, sizeof(int), compareInts, false);
     clock_t endMergeSort = clock();
     mergeSortTime = (double) (endMergeSort - beginMergeSort) / CLOCKS_PER_SEC;
     free(array);
@@ -44,11 +45,11 @@ int main()
    for (int j = 0; j < i; j++)
        printf("%d ", array[j]);
    putchar('\n');
-   mergeSort(array, 0, i-1, sizeof(int), compareInts, -1);
+   mergeSort(array, 0, i-1, sizeof(int), compareInts, true);
    for (int j = 0; j < i; j++)
        printf("%d ", array[j]);
    putchar('\n');
-   insertionSort(array, i, sizeof(int), compareInts, 1);
+   insertionSort(array, i, sizeof(int), compareInts, false);
    for (int j = 0; j < i; j++)
        printf("%d ", array[j]);
    putchar('\n');
