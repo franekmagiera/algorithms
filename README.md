@@ -12,7 +12,9 @@ This is a library containing various algorithms written in C. Functions work on 
  - bubble sort
  - merge sort
  - improved merge sort (newMergeSort()) that uses insertion sort for arrays of size smaller than 18. I came up with number 18 after playing around with insertionVsMerge program for a while. newMergeSort() is faster then old mergeSort(). For the array of size one million the difference is a couple of hundeths of a second.
- - heap sort
+ - heap sort (in heap.h)
+ - quicksort
+ - randomized quicksort (the partitioning element is choosen randomly from a given subarray)
 
 ## other
  - linear search
