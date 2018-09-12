@@ -15,6 +15,7 @@ This is a library containing various algorithms written in C. Functions work on 
  - heap sort (in heap.h)
  - quicksort
  - randomized quicksort (the partitioning element is choosen randomly from a given subarray)
+ - counting sort
 
 ## other
  - linear search

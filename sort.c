@@ -108,3 +108,21 @@ void randomizedQuicksort(void * array, int left, int right, int elementSize, int
     randomizedQuicksort(array, q+1, right, elementSize, compare, reverse);
     }
 }
+
+void countingSort(int *A, int *B, int k, int size)
+{
+    int *C = malloc((k+1)*sizeof(int));
+    if (C == NULL)
+        exit(EXIT_FAILURE);
+    for (int i = 0; i < k+1; i++)
+        C[i] = 0;
+    for (int i = 0; i < size; i++)
+        C[A[i]]++;
+    for (int i = 1; i < k+1; i++)
+        C[i] += C[i-1];
+    for (int i = size - 1; i >= 0; i--) {
+        B[C[A[i]]-1] = A[i];
+        C[A[i]]--;
+    }
+    free(C);
+}
