@@ -24,6 +24,10 @@ This is a library containing various algorithms written in C. Functions work on 
  - inversion counting
  - finding maximal subarray (three different algorithms - a brute force one of
 complexity O(n^2), a "divide and conquer" recursive one of complexity O(nlogn) and a linear one)
+ - randomized select that looks for an *i* smallest element of an array (it also
+   modifies the order of the elements in the array, so one has to be cautious
+   when the order of the elements is important for some reason and should call this
+   function using a copy of the original array)
 
 ## heap
  - max heapify
@@ -31,4 +35,11 @@ complexity O(n^2), a "divide and conquer" recursive one of complexity O(nlogn) a
  - heap sort
 
 ## common
-Contains functions such as swap and merge.
+ - swap
+ - merge
+ - minimum
+ - maximum
+ - minmax functions that finds both minimum and maximum of an array using no
+   more than 3n/2 comparisons (unlike running minimum function first and then maximum function that
+   would together require 2n-2 comparisions)
+ - partition and randomized partition
