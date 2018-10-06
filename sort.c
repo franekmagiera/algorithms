@@ -3,7 +3,6 @@
 #include <stdbool.h>
 #include <string.h>
 #include <stdlib.h>
-#include <time.h>
 
 #define BORDER_VALUE 17 // moreless for this value or lower insertion sort runs faster than mergesort
 
@@ -68,21 +67,6 @@ void newMergeSort(void * array, int left, int right, int elementSize, int (*comp
         insertionSort(array, right-left+1, elementSize, compare, reverse);
 }
 
-int partition(void * array, int left, int right, int elementSize, int (*compare)(const void *, const void *), bool reverse)
-{
-   // last element (array[right]) is the partitioning element
-   int coefficient = (reverse) ? (-1) : (1);
-   int i = left - 1;
-   for (int j = left; j < right; j++) {
-       if (compare(array+j*elementSize, array+right*elementSize) * coefficient <= 0) {
-           i++;
-           swap(array+i*elementSize, array+j*elementSize, elementSize);
-       }
-   }
-   swap(array+(i+1)*elementSize, array+right*elementSize, elementSize);
-   return (i+1);
-}
-
 void quicksort(void * array, int left, int right, int elementSize, int (*compare)(const void *, const void *), bool reverse)
 {
     if (left < right) {
@@ -90,14 +74,6 @@ void quicksort(void * array, int left, int right, int elementSize, int (*compare
         quicksort(array, left, q-1, elementSize, compare, reverse);
         quicksort(array, q+1, right, elementSize, compare, reverse);
     }
-}
-
-int randomizedPartition(void * array, int left, int right, int elementSize, int (*compare)(const void *, const void *), bool reverse)
-{
-    srand(time(NULL));
-    int i = left + rand() / (RAND_MAX / (right-left+1) + 1); 
-    swap(array+right*elementSize, array+i*elementSize, elementSize);
-    return partition(array, left, right, elementSize, compare, reverse);
 }
 
 void randomizedQuicksort(void * array, int left, int right, int elementSize, int (*compare)(const void *, const void *), bool reverse)
@@ -126,3 +102,4 @@ void countingSort(int *A, int *B, int k, int size)
     }
     free(C);
 }
+

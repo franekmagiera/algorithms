@@ -159,3 +159,17 @@ void findMaximalSubarrayLinear(double * array, int arraySize, Vector3d * results
     results->y = right_index;
     results->z = sum;
 }
+
+int randomizedSelect(void * array, int left, int right, int i, int elementSize, int (*compare)(const void *, const void *))
+{
+    if (left == right) 
+        return left;
+    int q = randomizedPartition(array, left, right, elementSize, compare, false); 
+    int k = q-left+1;
+    if (i == k)
+        return q;
+    else if (i < k)
+        return randomizedSelect(array, left, q-1, i, elementSize, compare);
+    else return randomizedSelect(array, q+1, right, i-k, elementSize, compare);
+}
+
