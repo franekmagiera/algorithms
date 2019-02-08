@@ -35,7 +35,12 @@ complexity O(n^2), a "divide and conquer" recursive one of complexity O(nlogn) a
  - heap sort
 
 ## stack
- - work in progress
+ - stack initialization is needed before using it and is achieved by calling
+   initStack function with stack's elements' size as a parameter, e.g.
+   sizeof(float), sizeof(struct SomeStruct)
+ - one has to free the memory after using the stack (freeStack function)
+ - stack's size doubles after memory limit is reached, growth is exponential,
+   this doubling strategy has some advantages and disadvantages 
 
 ## common
  - swap
