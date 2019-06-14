@@ -49,3 +49,16 @@ void freeList(List * list)
     list->head = NULL;
 }
 
+void reverseList(List * list)
+{
+    Node * ptr;
+    while (list->head->next != NULL) {
+        list->head = list->head->next;
+        ptr = list->head->previous->previous;
+        list->head->previous->previous = list->head->previous->next;
+        list->head->previous->next = ptr;
+    }
+    list->head->next = list->head->previous;
+    list->head->previous = NULL;
+}
+

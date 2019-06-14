@@ -17,5 +17,6 @@ void initList(List * list);
 bool isEmpty(List list);
 void insertElement(List * list, const void * el, int elSize);
 void freeList(List * list);
+void reverseList(List * list);
 
 #endif /* LIST_H_ */

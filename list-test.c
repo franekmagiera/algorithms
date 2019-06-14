@@ -34,6 +34,20 @@ int main()
         i++;
         ptr = ptr->next;
     }
+    printf("--------------------------\n");
+    reverseList(&lista);
+    i = 1;
+    ptr = lista.head;
+    while (ptr->next != NULL) {
+        memcpy(&y, ptr->element, sizeof(int));
+        printf("%d. element listy: %d\n", i, y);
+        i++;
+        ptr = ptr->next;
+    }
+    memcpy(&z, ptr->element, sizeof(float));
+    printf("Ostatni element listy: %f\n", z);
+    ptr = ptr->next;
+    (ptr == NULL) ? printf("Jest OK.\n") : printf("Cos nie gra :(\n");
     freeList(&lista);
     if (isEmpty(lista))
         printf("Lista jest pusta.\n");
