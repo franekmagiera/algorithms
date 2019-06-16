@@ -42,6 +42,15 @@ complexity O(n^2), a "divide and conquer" recursive one of complexity O(nlogn) a
  - stack's size doubles after memory limit is reached, growth is exponential,
    this doubling strategy has some advantages and disadvantages 
 
+## doubly linked list
+ - elements of different types can be stored in one list
+ - list-test.c presents how this data structure can be used
+
+## binary tree
+ - binary-tree-test.c presents how this data structure can be used
+ - recursive treeSearch function can be used to modify a certain node
+ - iterativeTreeSearch copies the element value of a node
+
 ## common
  - swap
  - merge

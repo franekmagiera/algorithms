@@ -16,11 +16,15 @@ bool isBtEmpty(const btNode * root)
 void insertBtElement(btNode ** root, const void * el, int elSize, int (*compare)(const void *, const void *))
 {
     btNode * z = malloc(sizeof(btNode));
-    if (z == NULL)
+    if (z == NULL) {
+        printf("Malloc error #1.\n");
         exit(EXIT_FAILURE);
+    }
     z->element = malloc(sizeof(elSize));
-    if (z->element == NULL)
+    if (z->element == NULL) {
+        printf("Malloc error #2.\n");
         exit(EXIT_FAILURE);
+    }
     memcpy(z->element, el, elSize);
     z->left = NULL;
     z->right = NULL;
